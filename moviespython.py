@@ -21,7 +21,7 @@ def calculate_vote_count(data_source, output_uri):
 
         # Create a DataFrame of the top 10 restaurants with the most Red violations
         genre_count = spark.sql("""SELECT geners, count(*) AS genre_count
-          FROM movie_desc 
+          FROM movie_desc
           WHERE original_language = 'en' 
           GROUP BY genres
           ORDER BY genre_count DESC LIMIT 10""")
